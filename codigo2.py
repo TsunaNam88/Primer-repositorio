@@ -1,2 +1,2 @@
-name = "Tsuna"
+name = "Dalto"
 print("Hola, " + name)
