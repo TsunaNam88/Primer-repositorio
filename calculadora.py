@@ -1,4 +1,4 @@
-"""Coonvertir numeros romanos a enteros
+"""Convertir numeros romanos a enteros
 Usando un diccionario de valores de los numeros romanos
 Usando Reversed que lee los valores de reversa
 Usando la funcion upper para convertir los Strings en mayus"""
