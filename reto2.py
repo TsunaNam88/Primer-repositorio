@@ -16,10 +16,11 @@ Lista de estudiantes presentes
 
 """
 
-import ast
 
-
-def convertir_boleano(presente):
+def convertir_booleano(presente):
+    """
+    Funcion para convertir a booleano la entrada
+    """
     return (
         True
         if presente.lower() == "si"
@@ -28,6 +29,9 @@ def convertir_boleano(presente):
 
 
 def alumnos():
+    """
+    recibir los datos de los alumnos y su estado
+    """
     asistencias = {}
 
     while True:
@@ -37,7 +41,7 @@ def alumnos():
         if nombre.lower() == "salir":
             break
         presente = input(f"{nombre} Asistio(si/no): ")
-        asistencia = convertir_boleano(presente)
+        asistencia = convertir_booleano(presente)
         if asistencia is None:
             print("Ingrese 'Si' o 'no' correctamente")
             continue
