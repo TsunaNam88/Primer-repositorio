@@ -8,12 +8,12 @@ Y con un diccionario mapea el nombre de cada estudiante y su estado de asistenci
 
 Args:
 
-Str: Nombre del estudiante 
-Boleano: True en caso de asistencia, en caso contrario False
+nombre (str): Nombre del estudiante 
+asistencia (Boleano): True en caso de asistencia, en caso contrario False
  
 Devuelve: 
-El porcentaje de asistencia total de clase
-Lista de estudiantes presentes
+int: El porcentaje de asistencia total de clase
+str: Lista de estudiantes presentes
 
 """
 
@@ -33,7 +33,7 @@ def convertir_booleano(presente):
 
 def alumnos():
     """
-    recibir los datos de los alumnos y su estado
+    recibir el nombre del alumno y su estado de asistencia
     """
     asistencias = {}
 
@@ -55,15 +55,18 @@ def alumnos():
 def calcular_asistencia(asistencias):
     """
     Calcular el porcentaje de los alumnos
+    Imprimir la lista de quien asistio
     """
     num_de_estudiantes = len(asistencias)
     contar_asistencia = sum(1 for estado in asistencias.values() if estado is True)
     porcentaje = (
         (contar_asistencia / num_de_estudiantes) * 100 if num_de_estudiantes > 0 else 0
     )
-    print(f"Porcentaje de asistencia: {porcentaje}%")
-    if True in asistencias.values():
-        print()
+    print(f"Porcentaje de asistencia: {porcentaje:.2f}%")
+    alumnos_con_asistencia = [
+        alumno for alumno, estado in asistencias.items() if estado is True
+    ]
+    print(f"Los alumnos que asistieron son: {alumnos_con_asistencia}")
 
 
 asistencias = alumnos()
