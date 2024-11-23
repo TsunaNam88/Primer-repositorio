@@ -1,3 +1,4 @@
+# rama gestion de asistencia
 """
 Desarrollar una aplicacion para gestionar la asistencia
 de una clase creando una funcion llamada calcular asitencia:
@@ -21,10 +22,12 @@ def convertir_booleano(presente):
     """
     Funcion para convertir a booleano la entrada
     """
+    cierto = {"si", "s", "i", "yes", "y"}
+    falso = {"no", "n", "o"}
     return (
         True
-        if presente.lower() == "si"
-        else False if presente.lower() == "no" else None
+        if presente.lower() in cierto
+        else False if presente.lower() in falso else None
     )
 
 
@@ -46,7 +49,22 @@ def alumnos():
             print("Ingrese 'Si' o 'no' correctamente")
             continue
         asistencias[nombre] = asistencia
-    print(asistencias)
+    return asistencias
 
 
-alumnos()
+def calcular_asistencia(asistencias):
+    """
+    Calcular el porcentaje de los alumnos
+    """
+    num_de_estudiantes = len(asistencias)
+    contar_asistencia = sum(1 for estado in asistencias.values() if estado is True)
+    porcentaje = (
+        (contar_asistencia / num_de_estudiantes) * 100 if num_de_estudiantes > 0 else 0
+    )
+    print(f"Porcentaje de asistencia: {porcentaje}%")
+    if True in asistencias.values():
+        print()
+
+
+asistencias = alumnos()
+calcular_asistencia(asistencias)
