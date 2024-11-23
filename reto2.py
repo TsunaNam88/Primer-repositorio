@@ -1,4 +1,3 @@
-# rama gestion de asistencia
 """
 Desarrollar una aplicacion para gestionar la asistencia
 de una clase creando una funcion llamada calcular asitencia:
