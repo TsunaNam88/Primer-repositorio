@@ -22,8 +22,8 @@ def convertir_booleano(presente):
     """
     Funcion para convertir a booleano la entrada
     """
-    cierto = {"si", "s", "i", "yes", "y"}
-    falso = {"no", "n", "o"}
+    cierto = {"si", "s", "i", "yes", "y", "1"}
+    falso = {"no", "n", "o", "0"}
     return (
         True
         if presente.lower() in cierto
